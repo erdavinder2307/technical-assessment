@@ -1,0 +1,7 @@
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error">Error :(</div>
+<div *ngIf="films">
+    <div *ngFor="let film of films">
+        <p>{{ film.title}}</p>
+    </div>
+</div>

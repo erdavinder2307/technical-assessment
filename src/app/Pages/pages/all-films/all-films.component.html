@@ -1,0 +1,37 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+<div class="card main-card mb-3">
+    <div class="card-header">
+        All Films
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Director</th>
+                <th scope="col">Release Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- pageSize filter -->
+            <tr *ngFor="let film of getCurrentFilms(); index as i ">
+
+                <th scope="row">{{ i + 1 }}</th>
+                <td>
+                    {{ film.title }}
+                </td>
+                <td>
+                    {{ film.director }}
+                </td>
+                <td>
+                    {{ film.releaseDate }}
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<app-pagination [items]="this.films" [page]="page" [collectionSize]="collectionSize"
+    (itemsChange)="updateFilms($event)"></app-pagination>

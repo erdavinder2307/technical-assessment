@@ -1,0 +1,43 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+<div class="card main-card mb-3">
+    <div class="card-header">
+        All Planets
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Diameter</th>
+                <th scope="col">Gravity</th>
+                <th scope="col">Population</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let planet of getCurrentPlanets(); index as i">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>
+
+                    {{ planet.name }}
+                </td>
+                <td>
+
+                    {{ planet.diameter }}
+                </td>
+                <td>
+
+                    {{ planet.gravity }}
+                </td>
+                <td>
+
+                    {{ planet.population }}
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<app-pagination [items]="this.planets" [page]="page" [collectionSize]="collectionSize"
+    (itemsChange)="updatePlanets($event)"></app-pagination>
