@@ -28,7 +28,7 @@ export class PaginationComponent {
       page: this.page,
       pageSize: this.pageSize
     }
-    debugger;
+
     this.itemsChange.emit(data);
   }
 }

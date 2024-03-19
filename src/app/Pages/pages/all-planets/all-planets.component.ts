@@ -42,7 +42,7 @@ export class AllPlanetsComponent {
         `,
       })
       .valueChanges.subscribe((result: any) => {
-        debugger;
+
         this.planets = result.data?.allPlanets?.planets || [];
         this.loading = result.loading;
         this.error = result.error;
@@ -51,7 +51,7 @@ export class AllPlanetsComponent {
   }
 
   getCurrentPlanets() {
-    debugger;
+
     if (this.page != 1) {
       return this.planets.slice(this.page * this.pageSize, (this.page + 1) * this.pageSize);
     } else {
@@ -61,7 +61,7 @@ export class AllPlanetsComponent {
   }
 
   updatePlanets($event: any) {
-    debugger;
+
     this.page = $event.page;
     this.pageSize = $event.pageSize;
   }

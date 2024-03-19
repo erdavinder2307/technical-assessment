@@ -38,7 +38,7 @@ export class AllPeopleComponent {
         `,
       })
       .valueChanges.subscribe((result: any) => {
-        debugger;
+
         this.people = result.data?.allPeople?.people || [];
         this.loading = result.loading;
         this.error = result.error;
@@ -48,7 +48,7 @@ export class AllPeopleComponent {
 
 
   getCurrentPeople() {
-    debugger;
+
     if (this.page != 1) {
       return this.people.slice(this.page * this.pageSize, (this.page + 1) * this.pageSize);
     } else {
@@ -58,7 +58,7 @@ export class AllPeopleComponent {
   }
 
   updatePeople($event: any) {
-    debugger;
+
     this.page = $event.page;
     this.pageSize = $event.pageSize;
   }

@@ -38,7 +38,7 @@ export class AllFilmsComponent {
         `,
       })
       .valueChanges.subscribe((result: any) => {
-        debugger;
+
         this.films = result.data?.allFilms?.films || [];
         //assign films to currentfilms for pagination
 
@@ -49,7 +49,7 @@ export class AllFilmsComponent {
   }
 
   getCurrentFilms() {
-    debugger;
+
     if (this.page != 1) {
       return this.films.slice(this.page * this.pageSize, (this.page + 1) * this.pageSize);
     } else {
@@ -59,7 +59,7 @@ export class AllFilmsComponent {
   }
 
   updateFilms($event: any) {
-    debugger;
+
     this.page = $event.page;
     this.pageSize = $event.pageSize;
   }

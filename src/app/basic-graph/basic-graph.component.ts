@@ -29,7 +29,7 @@ export class BasicGraphComponent implements OnInit {
         `,
       })
       .valueChanges.subscribe((result: any) => {
-        debugger;
+
         this.films = result.data?.allFilms?.films || [];
         this.loading = result.loading;
         this.error = result.error;
